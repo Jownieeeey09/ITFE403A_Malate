@@ -1,0 +1,33 @@
+.announcement-card {
+    background: #ffffff;
+    border: 2px solid #0B5ED7;      /* Blue border */
+    border-radius: 18px;            /* Rounded corners */
+    padding: 20px;                  /* Padding */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* Subtle shadow */
+    transition: all 0.3s ease;
+}
+
+.announcement-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.announcement-card h3 {
+    color: #0B5ED7;
+    margin: 0 0 12px;
+    font-size: 22px;
+}
+
+.announcement-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.date {
+    display: block;
+    color: #777;
+    font-size: 14px;
+    font-weight: 600;
+}

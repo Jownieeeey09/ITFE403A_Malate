@@ -1,33 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My First Angular Application</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="app.css">
-</head>
-<body>
+<app-header></app-header>
 
-  <div class="stage">
+<div class="main-content">
 
-    <div class="browser">
-      <div class="viewport">
-        <div class="portrait">
-          <span class="portrait-emoji" role="img" aria-label="Blushing face">&#128522;</span>
-        </div>
-        <div class="eyebrow">Compiled successfully</div>
-        <h1>My First Angular Application</h1>
-        <div class="meta">
-          <div class="name">Jownie Ann D. Malate</div>
-          <div class="sub">BSIT&nbsp;-&nbsp;IV <span class="sep">&middot;</span> July 31, 2026</div>
-        </div>
-      </div>
+    <app-profile-card></app-profile-card>
+
+    <div class="announcement-section">
+       <h2>Latest Announcements</h2>
+
+        <app-announcement-card
+            title="📢 Enrollment Reminder"
+            description="Enrollment for the First Semester AY 2026-2027 will end on August 08, 2026. Please complete your requirements on time."
+            date="August 08, 2026">
+        </app-announcement-card>
+
+        <app-announcement-card
+            title="📸 Official ID Picture Taking"
+            description="Official ID Picture Taking for all enrolled students will be held on August 20, 2026 at the Don Bosco AVR from 8:00 AM to 4:00 PM. Students are required to wear their complete school uniform and present their registration form."
+            date="August 20, 2026">
+        </app-announcement-card>
+
+        <app-announcement-card
+            title="🏆 Intramurals 2026"
+            description="Registration for the annual Intramurals is now open. Students may register for sports and cultural events until September 05, 2026."
+            date="September 05, 2026">
+        </app-announcement-card>
+
     </div>
 
-  </div>
+</div>
 
-</body>
-</html>
+<app-footer></app-footer>
