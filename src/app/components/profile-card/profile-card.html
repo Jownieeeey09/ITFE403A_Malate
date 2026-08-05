@@ -1,17 +1,16 @@
 <div class="profile-card">
-    <img src="profile.jpg" alt="Profile Picture">
+   <img src="profile.jpg" alt="Profile Picture">
 
-
-    <h2>Jownie Ann D. Malate</h2>
-
-    <div class="divider"></div>
-
-    <div class="details">
-        <p class="label">COURSE</p>
-        <p class="value">Bachelor of Science in Information Technology</p>
-
-        <p class="label">YEAR LEVEL</p>
-        <p class="value">4th Year</p>
-    </div>
+    <h2 class="profile-name">{{ studentName }}</h2>
+    <p class="student-id">Student ID:{{ studentNumber }}</p>
+    <p class="course">Course: {{ course }}</p>
+    <p class="year-level">Year Level: {{ yearLevel}}</p>
+    <p class="section">Section: {{section}}</p>
+    <p class="nickname">Nickname: {{nickname.toUpperCase()}}</p>
+    <p class="email">Email: {{ studentName.toLowerCase().replaceAll(' ', '') + '@dbtc-cebu.edu.ph' }}</p>
+    
+    <p class="grade">grade: {{grade}}</p>
+    <b>{{ grade>=1.0 && grade<=3 ? 'Passed' : 'Failed'}}</b>
 
 </div>
+
