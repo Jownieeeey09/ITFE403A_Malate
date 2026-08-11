@@ -1,16 +1,54 @@
 <div class="profile-card">
-   <img src="profile.jpg" alt="Profile Picture">
 
-    <h2 class="profile-name">{{ studentName }}</h2>
-    <p class="student-id">Student ID:{{ studentNumber }}</p>
-    <p class="course">Course: {{ course }}</p>
-    <p class="year-level">Year Level: {{ yearLevel}}</p>
-    <p class="section">Section: {{section}}</p>
-    <p class="nickname">Nickname: {{nickname.toUpperCase()}}</p>
-    <p class="email">Email: {{ studentName.toLowerCase().replaceAll(' ', '') + '@dbtc-cebu.edu.ph' }}</p>
-    
-    <p class="grade">grade: {{grade}}</p>
-    <b>{{ grade>=1.0 && grade<=3 ? 'Passed' : 'Failed'}}</b>
+  <img
+    class="profile-img"
+    src="profile.jpg"
+    alt="Profile Picture"
+  >
+
+  <h2 class="profile-name">
+    {{ studentName }}
+  </h2>
+
+  <div class="profile-info">
+
+    <p class="student-id">
+      <strong>Student ID:</strong> {{ studentNumber }}
+    </p>
+
+    <p class="course">
+      <strong>Course:</strong> {{ course }}
+    </p>
+
+    <p class="year-level">
+      <strong>Year Level:</strong> {{ yearLevel }}
+    </p>
+
+    <p class="section">
+      <strong>Section:</strong> {{ section }}
+    </p>
+
+    <p class="nickname">
+      <strong>Nickname:</strong> {{ nickname.toUpperCase() }}
+    </p>
+
+    <p class="email">
+      <strong>Email:</strong>
+      {{ studentName.toLowerCase().replaceAll(' ', '') + '@dbtc-cebu.edu.ph' }}
+    </p>
+
+  </div>
+
+  <div class="grade-box">
+
+    <p class="grade">
+      <strong>Grade:</strong> {{ grade }}
+    </p>
+
+    <b class="grade-status">
+      {{ grade >= 1.0 && grade <= 3 ? 'Passed' : 'Failed' }}
+    </b>
+
+  </div>
 
 </div>
-

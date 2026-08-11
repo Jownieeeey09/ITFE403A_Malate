@@ -1,0 +1,18 @@
+<div class="student-list">
+
+  <div
+    class="student-card"
+    *ngFor="let student of students; let i = index"
+  >
+
+    <h2 class="student-name">
+      #{{ i + 1 }} {{ student.name }}
+    </h2>
+
+    <p class="student-details">
+      {{ student.course }} • {{ student.yearLevel }}
+    </p>
+
+  </div>
+
+</div>

@@ -1,33 +1,142 @@
+.announcement-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
 .announcement-card {
-    background: #ffffff;
-    border: 2px solid #0B5ED7;      /* Blue border */
-    border-radius: 18px;            /* Rounded corners */
-    padding: 20px;                  /* Padding */
-    margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* Subtle shadow */
-    transition: all 0.3s ease;
+  width: 100%;
+
+  min-height: 150px;
+
+  display: flex;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe5ec;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+
+  transition: 0.2s ease;
+}
+
+.announcement-indicator {
+  width: 6px;
+
+  flex-shrink: 0;
+
+  background: #1d5fd1;
+}
+
+.announcement-content {
+  width: 100%;
+
+  padding: 22px 24px;
+
+  box-sizing: border-box;
+}
+
+.announcement-title {
+  display: block;
+
+  margin: 0 0 10px;
+
+  padding: 0;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  color: #123b73;
+}
+
+.announcement-body {
+  display: block;
+
+  margin: 0 0 18px;
+
+  padding: 0;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  color: #4b5563;
+}
+
+.announcement-meta {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid #edf0f4;
+
+  font-size: 13px;
+
+  color: #6b7280;
+}
+
+.announcement-author {
+  font-weight: 600;
+
+  color: #315b91;
+}
+
+.announcement-date {
+  white-space: nowrap;
+
+  color: #6b7280;
 }
 
 .announcement-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+
+  border-color: #2563eb;
+
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.09);
 }
 
-.announcement-card h3 {
-    color: #0B5ED7;
-    margin: 0 0 12px;
-    font-size: 22px;
-}
+@media (max-width: 600px) {
 
-.announcement-card p {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
+  .announcement-card {
+    min-height: auto;
+  }
 
-.date {
-    display: block;
-    color: #777;
+  .announcement-content {
+    padding: 18px;
+  }
+
+  .announcement-title {
+    font-size: 18px;
+  }
+
+  .announcement-body {
     font-size: 14px;
-    font-weight: 600;
+  }
+
+  .announcement-meta {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+  }
+
 }

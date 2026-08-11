@@ -1,16 +1,53 @@
 <app-header></app-header>
 
-<div class="main-content">
+<main class="dashboard">
 
-    <app-profile-card></app-profile-card>
+  <div class="dashboard-grid">
 
-    <div class="announcement-section">
-       <h2>Latest Announcements</h2>
 
-        <app-announcement-card></app-announcement-card>
+    <aside class="left-column">
 
-    </div>
+      <section class="profile-section">
 
-</div>
+        <app-profile-card></app-profile-card>
+
+      </section>
+
+
+      <section class="students-section">
+
+        <div class="section-header">
+
+          <h1>Students</h1>
+
+          <p>Student directory</p>
+
+        </div>
+
+        <app-student-list></app-student-list>
+
+      </section>
+
+    </aside>
+
+    <section class="announcements-section">
+
+      <div class="section-header">
+
+        <h1>Announcements</h1>
+
+        <p>
+          Stay updated with the latest school information.
+        </p>
+
+      </div>
+
+      <app-announcement-card></app-announcement-card>
+
+    </section>
+
+  </div>
+
+</main>
 
 <app-footer></app-footer>
