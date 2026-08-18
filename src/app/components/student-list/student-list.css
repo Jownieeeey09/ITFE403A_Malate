@@ -1,31 +1,31 @@
 .student-list {
   display: flex;
-
   flex-direction: column;
-
-  gap: 12px;
-
+  gap: 15px;
   width: 100%;
 }
 
 
+/* Individual student container */
+
 .student-card {
   width: 100%;
-
-  padding: 16px 18px;
-
-  box-sizing: border-box;
 
   background: #ffffff;
 
   border: 1px solid #dfe5ec;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
 
   transition: 0.2s ease;
 }
+
 
 
 .student-card:hover {
@@ -33,18 +33,20 @@
 
   border-color: #2563eb;
 
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.student-info {
+  flex: 1;
 }
 
 
 .student-name {
   margin: 0 0 6px;
 
-  font-size: 16px;
+  font-size: 17px;
 
   font-weight: 700;
-
-  line-height: 1.3;
 
   color: #123b73;
 }
@@ -56,6 +58,110 @@
   font-size: 14px;
 
   color: #6b7280;
+}
 
-  line-height: 1.4;
+
+
+.student-actions {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 15px;
+
+  width: 100%;
+}
+
+
+.student-actions button {
+  padding: 8px 12px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.student-actions button:active {
+  transform: scale(0.95);
+}
+
+
+.favorite-btn {
+  background: #77c8ff;
+
+  color: #080808;
+}
+
+
+.edit-btn {
+  background: #3225bd;
+
+  color: #f1f3f6;
+}
+
+
+.delete-btn {
+  background: #cd0606;
+
+  color: #fbf8f8;
+}
+
+.favorite-btn.active {
+  background-color: #ffd700;
+  color: #000;
+}
+
+.student-card.favorited {
+  border: 2px solid #ffd700;
+  background-color: #fffbe6;
+}
+
+
+.student-actions button:hover {
+  transform: translateY(-1px);
+
+  opacity: 0.85;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .student-card {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .student-actions {
+    width: 100%;
+  }
+
+  .student-actions button {
+    flex: 1;
+  }
+
+}
+.edit-feedback {
+  background-color: #e8f0fe;
+  color: #1a3d7c;
+  border: 1px solid #b6cdfa;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.student-card.editing {
+  border: 2px solid #4285f4;
+  background-color: #f0f6ff;
 }

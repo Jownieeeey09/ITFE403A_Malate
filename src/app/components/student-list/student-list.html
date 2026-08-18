@@ -1,17 +1,47 @@
 <div class="student-list">
 
+  <p class="delete-feedback" *ngIf="deleteMessage">
+    {{ deleteMessage }}
+  </p>
+
+  <p class="edit-feedback" *ngIf="editingStudent">
+    Now editing: {{ editingStudent.name }}
+  </p>
+
   <div
     class="student-card"
+    [class.favorited]="student.isFavorite"
+    [class.editing]="student === editingStudent"
     *ngFor="let student of students; let i = index"
   >
 
-    <h2 class="student-name">
-      #{{ i + 1 }} {{ student.name }}
-    </h2>
+    <div class="student-info">
+      <h2 class="student-name">#{{ i + 1 }} {{ student.name }}</h2>
+      <p class="student-details">{{ student.course }} • {{ student.yearLevel }}</p>
+    </div>
 
-    <p class="student-details">
-      {{ student.course }} • {{ student.yearLevel }}
-    </p>
+    <div class="student-actions">
+      <button
+        class="favorite-btn"
+        [class.active]="student.isFavorite"
+        type="button"
+        (click)="onFavoriteClick(student)"
+      >
+        {{ student.isFavorite ? '★ Favorited' : '☆ Favorite' }}
+      </button>
+
+      <button
+        class="edit-btn"
+        type="button"
+        (click)="onEditClick(student)"
+      >
+        Edit
+      </button>
+
+      <button class="delete-btn" type="button" (click)="onDeleteClick(i)">
+        Delete
+      </button>
+    </div>
 
   </div>
 

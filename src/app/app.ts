@@ -22,4 +22,8 @@ import { Footer } from './components/footer/footer';
 })
 export class App {
 
+  onPinClick() {
+    console.log('Pin button clicked!');
+  }
+
 }

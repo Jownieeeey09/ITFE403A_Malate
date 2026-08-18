@@ -1,18 +1,51 @@
 <div class="announcement-list">
 
-  <div class="announcement-card" *ngFor="let announcement of announcements">
+  <p class="delete-feedback" *ngIf="deleteMessage">
+    {{ deleteMessage }}
+  </p>
 
-    <div class="announcement-indicator"></div>
+  <div
+    class="announcement-card"
+    [class.pinned]="announcement.isImportant"
+    *ngFor="let announcement of announcements; let i = index"
+  >
 
-    <div class="announcement-content">
+    <h2 class="announcement-title">
+      {{ announcement.isImportant ? '📌 ' : '' }}{{ announcement.title }}
+    </h2>
 
-      <h2 class="announcement-title">
-        {{ announcement.title }}
-      </h2>
+    <p class="announcement-content">
+      {{ announcement.body }}
+    </p>
 
-      <p class="announcement-body">
-        {{ announcement.body }}
-      </p>
+    <div class="announcement-meta">
+      <span>
+        Posted by: {{ announcement.author }}
+      </span>
+
+      <span>
+        {{ announcement.date }}
+      </span>
+    </div>
+
+    <div class="announcement-actions">
+
+      <button
+        class="pin-btn"
+        [class.active]="announcement.isImportant"
+        type="button"
+        (click)="onPinClick(announcement)"
+      >
+        {{ announcement.isImportant ? 'Unpin' : 'Pin' }}
+      </button>
+
+      <button
+        class="delete-btn"
+        type="button"
+        (click)="onDeleteClick(i)"
+      >
+        Delete
+      </button>
 
     </div>
 
