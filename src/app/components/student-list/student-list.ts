@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,17 +8,27 @@ import { CommonModule } from '@angular/common';
   templateUrl: './student-list.html',
   styleUrl: './student-list.css'
 })
-export class StudentList {
+export class StudentList implements OnInit {
 
   students = [
-    { name: 'Mary Beth D. Gracia', course: 'BSIT', yearLevel: '4th Year', isFavorite: false },
-    { name: 'Bonna Mae L. Pitogo', course: 'BSIT', yearLevel: '4th Year', isFavorite: false },
-    { name: 'Niel Jhon E. Celocia', course: 'BSIT', yearLevel: '4th Year', isFavorite: false },
-    { name: 'Kurt Wojtyle S. Rizal', course: 'BSIT', yearLevel: '4th Year', isFavorite: false }
+    { name: 'Mary Beth D. Gracia', course: 'BSIT', yearLevel: '4th Year', isFavorite: false, active: true },
+    { name: 'Bonna Mae L. Pitogo', course: 'BSIT', yearLevel: '4th Year', isFavorite: false, active: true },
+    { name: 'Niel Jhon E. Celocia', course: 'BSIT', yearLevel: '4th Year', isFavorite: false, active: false },
+    { name: 'Kurt Wojtyle S. Rizal', course: 'BSIT', yearLevel: '4th Year', isFavorite: false, active: false }
   ];
 
   deleteMessage = '';
   editingStudent: any = null;
+  isLoading = true;
+
+  ngOnInit() {
+    console.log('ngOnInit ran, isLoading is:', this.isLoading);
+
+    setTimeout(() => {
+      this.isLoading = false;
+      console.log('after delay, isLoading is now:', this.isLoading);
+    }, 2000);
+  }
 
   onFavoriteClick(student: any) {
     student.isFavorite = !student.isFavorite;

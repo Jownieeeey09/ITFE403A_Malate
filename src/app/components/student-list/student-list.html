@@ -1,12 +1,13 @@
-<div class="student-list">
+<div class="loading-screen" *ngIf="isLoading">
+  <p class="loading-text">Loading students...</p>
+</div>
 
+<div class="student-list" *ngIf="!isLoading">
   <p class="delete-feedback" *ngIf="deleteMessage">
     {{ deleteMessage }}
   </p>
 
-  <p class="edit-feedback" *ngIf="editingStudent">
-    Now editing: {{ editingStudent.name }}
-  </p>
+  <p class="edit-feedback" *ngIf="editingStudent">Now editing: {{ editingStudent.name }}</p>
 
   <div
     class="student-card"
@@ -14,10 +15,15 @@
     [class.editing]="student === editingStudent"
     *ngFor="let student of students; let i = index"
   >
-
     <div class="student-info">
       <h2 class="student-name">#{{ i + 1 }} {{ student.name }}</h2>
       <p class="student-details">{{ student.course }} • {{ student.yearLevel }}</p>
+
+      <span class="active-badge" *ngIf="student.active; else inactiveBadge"> Active </span>
+
+      <ng-template #inactiveBadge>
+        <span class="inactive-badge"> Offline </span>
+      </ng-template>
     </div>
 
     <div class="student-actions">
@@ -30,19 +36,16 @@
         {{ student.isFavorite ? '★ Favorited' : '☆ Favorite' }}
       </button>
 
-      <button
-        class="edit-btn"
-        type="button"
-        (click)="onEditClick(student)"
-      >
+      <button class="edit-btn" type="button" *ngIf="student.active" (click)="onEditClick(student)">
         Edit
       </button>
 
-      <button class="delete-btn" type="button" (click)="onDeleteClick(i)">
-        Delete
-      </button>
+      <button class="delete-btn" type="button" (click)="onDeleteClick(i)">Delete</button>
     </div>
-
   </div>
 
+  <div class="empty-state" *ngIf="students.length === 0">
+    <p class="empty-title">No students found.</p>
+    <p class="empty-subtitle">Add your first student to get started.</p>
+  </div>
 </div>

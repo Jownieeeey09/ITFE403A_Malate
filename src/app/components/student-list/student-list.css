@@ -165,3 +165,55 @@
   border: 2px solid #4285f4;
   background-color: #f0f6ff;
 }
+
+.active-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 4px;
+  background-color: #d4f7dc;
+  color: #1a7431;
+}
+
+.inactive-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 4px;
+  background-color: #fc7676;
+  color: #383737;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888888;
+}
+
+.empty-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.empty-subtitle {
+  font-size: 0.95rem;
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #555555;
+}
+
+.loading-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
