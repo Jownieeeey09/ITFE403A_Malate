@@ -1,0 +1,39 @@
+<header class="header">
+  <div class="header-content">
+    <div class="logo">
+      <div class="bag-logo">S</div>
+      <span>{{ shopName }}</span>
+    </div>
+
+    <div class="search-area">
+      <div class="search-box">
+        <input
+          type="text"
+          placeholder="Sign up and get 100% off on your first order"
+          [(ngModel)]="searchText"
+          (keyup.enter)="searchProducts()"
+        />
+
+        <button class="search-button" (click)="searchProducts()">🔍</button>
+      </div>
+
+      <div class="suggestions">
+        <span>Shoes Pang Porma</span>
+        <span>Tube Blouse</span>
+        <span>Powerbank 30000</span>
+        <span>Jeans Short</span>
+        <span>Piso Pabango</span>
+        <span>Aquaflask Original</span>
+        <span>Baggy Pants Retro Denim</span>
+      </div>
+    </div>
+
+    <button class="cart-button">
+      🛒
+
+      <span class="cart-count" *ngIf="cartCount > 0">
+        {{ cartCount }}
+      </span>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,105 @@
+.header {
+  background: linear-gradient(to right, #ff4d2e, #ff5b3b);
+
+  height: 92px;
+  color: white;
+}
+
+.header-content {
+  width: 1030px;
+  margin: auto;
+  height: 92px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 175px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 27px;
+}
+
+.bag-logo {
+  width: 35px;
+  height: 35px;
+  border: 3px solid white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.search-area {
+  flex: 1;
+}
+
+.search-box {
+  height: 35px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.search-box input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  font-size: 12px;
+  color: #555;
+}
+
+.search-button {
+  width: 54px;
+  height: 31px;
+  margin-right: 2px;
+  border: none;
+  background: #ff4d2e;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.search-button:hover {
+  background: #e74328;
+}
+
+.suggestions {
+  display: flex;
+  gap: 13px;
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 10px;
+}
+
+.cart-button {
+  position: relative;
+  width: 70px;
+  margin-left: 20px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  background: white;
+  color: #ff4d2e;
+  border-radius: 10px;
+  min-width: 18px;
+  height: 18px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

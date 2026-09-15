@@ -1,0 +1,21 @@
+.page{
+ min-height: 100vh; 
+ background: white;
+ font-family:Arial, Helvetica, sans-serif;
+}
+.discover{
+  width: 1030px;
+  margin: auto;
+  height: 53px;
+  background: white;
+  border-bottom: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.discover h2{
+  margin: 0;
+  color: orangered;
+  font-size: 15px;
+  font-weight: 400;
+}
